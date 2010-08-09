@@ -1,0 +1,7 @@
+6/10/2010 10:19:55 AM: Access denied for user 'swganh'@'localhost' (using password: YES)
+6/10/2010 10:23:43 AM: Table 'swganh.accounts' doesn't exist
+6/10/2010 12:00:33 PM: Access denied for user 'swganh'@'localhost' (using password: YES)
+6/10/2010 6:04:44 PM: Access denied for user 'swganh'@'c-67-171-61-150.hsd1.wa.comcast.net' (using password: YES)
+6/10/2010 7:07:01 PM: Unable to connect to any of the specified MySQL hosts.
+6/10/2010 7:13:33 PM: Unable to connect to any of the specified MySQL hosts.
+6/11/2010 6:00:16 AM: Unable to connect to any of the specified MySQL hosts.

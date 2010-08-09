@@ -1,0 +1,37 @@
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\ANHAdmin.exe
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\ANHAdmin.pdb
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.Form1.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.Properties.Resources.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.exe
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.pdb
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmConServers.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ResGen.read.1.tlog
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ResGen.write.1.tlog
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\ANHAdmin.exe.config
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmZones.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\ANHMySQL.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\ANHMySQL.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\ANHAdmin.exe.config
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.exe
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.Form1.resources
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.frmConServers.resources
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.frmZones.resources
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.Properties.Resources.resources
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ResGen.read.1.tlog
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ResGen.write.1.tlog
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\ANHAdmin.exe
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\ANHAdmin.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\ANHMySQL.dll
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\DBI.dll
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\Utilities.dll
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\bin\Debug\ANHMySQL.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.frmDBConfig.resources
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHAdmin\obj\Debug\ANHAdmin.frmAccounts.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\DBI.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\bin\Debug\Utilities.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmAccounts.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmDBConfig.resources
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmConfig.resources

@@ -1,0 +1,16 @@
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\bin\Debug\ANHMySQL.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\bin\Debug\ANHMySQL.pdb
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\obj\Debug\ANHMySQL.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\obj\Debug\ANHMySQL.pdb
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\bin\Debug\DBI.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\bin\Debug\Utilities.dll
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\bin\Debug\DBI.pdb
+C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHMySQL\bin\Debug\Utilities.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\bin\Debug\ANHMySQL.dll
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\bin\Debug\ANHMySQL.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\bin\Debug\DBI.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\bin\Debug\Utilities.pdb
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\obj\Debug\ANHMySQL.dll
+C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\obj\Debug\ANHMySQL.pdb
