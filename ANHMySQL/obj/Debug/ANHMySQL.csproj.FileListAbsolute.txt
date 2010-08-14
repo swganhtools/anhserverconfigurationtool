@@ -14,3 +14,10 @@ C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\bin\Debug\Utilities.p
 C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\obj\Debug\ANHMySQL.dll
 C:\Users\Kevin\anhdev\ServerConfigurationTool.git\ANHMySQL\obj\Debug\ANHMySQL.pdb
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\bin\Debug\ANHMySQL.dll
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\bin\Debug\ANHMySQL.pdb
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\bin\Debug\DBI.pdb
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\bin\Debug\Utilities.pdb
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\obj\Debug\ResolveAssemblyReference.cache
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\obj\Debug\ANHMySQL.dll
+C:\AnhDev\anhserverconfigurationtool\ANHMySQL\obj\Debug\ANHMySQL.pdb
