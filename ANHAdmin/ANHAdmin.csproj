@@ -181,6 +181,7 @@
   <ItemGroup>
     <Content Include="b811b7a4d360adb8609d490dcffdbedd_icon.ico" />
     <Content Include="favicon.ico" />
+    <None Include="Resources\newgui.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

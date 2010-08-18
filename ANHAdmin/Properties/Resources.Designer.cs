@@ -59,5 +59,12 @@ namespace ANHAdmin.Properties {
                 resourceCulture = value;
             }
         }
+        
+        internal static System.Drawing.Bitmap newgui {
+            get {
+                object obj = ResourceManager.GetObject("newgui", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

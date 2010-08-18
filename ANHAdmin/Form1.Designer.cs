@@ -44,14 +44,13 @@
             this.accountsAndCharactersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.characterManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spawnsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemsAndObjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miscellaneousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutSWGANHServerManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutSWGANHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -61,9 +60,6 @@
             this.serverConfigurationToolStripMenuItem,
             this.serverManagementToolStripMenuItem,
             this.accountsAndCharactersToolStripMenuItem,
-            this.spawnsToolStripMenuItem,
-            this.itemsAndObjectsToolStripMenuItem,
-            this.miscellaneousToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -134,21 +130,21 @@
             this.startWorldServersToolStripMenuItem,
             this.startZonesToolStripMenuItem});
             this.serverManagementToolStripMenuItem.Name = "serverManagementToolStripMenuItem";
-            this.serverManagementToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
-            this.serverManagementToolStripMenuItem.Text = "Server Management";
+            this.serverManagementToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.serverManagementToolStripMenuItem.Text = "Start / Stop Servers";
             // 
             // startWorldServersToolStripMenuItem
             // 
             this.startWorldServersToolStripMenuItem.Name = "startWorldServersToolStripMenuItem";
-            this.startWorldServersToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.startWorldServersToolStripMenuItem.Text = "Start World Servers";
+            this.startWorldServersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startWorldServersToolStripMenuItem.Text = "World Servers";
             this.startWorldServersToolStripMenuItem.Click += new System.EventHandler(this.startWorldServersToolStripMenuItem_Click);
             // 
             // startZonesToolStripMenuItem
             // 
             this.startZonesToolStripMenuItem.Name = "startZonesToolStripMenuItem";
-            this.startZonesToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.startZonesToolStripMenuItem.Text = "Start Zones";
+            this.startZonesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startZonesToolStripMenuItem.Text = "Zone Servers";
             this.startZonesToolStripMenuItem.Click += new System.EventHandler(this.startZonesToolStripMenuItem_Click);
             // 
             // accountsAndCharactersToolStripMenuItem
@@ -172,24 +168,6 @@
             this.characterManagerToolStripMenuItem.Name = "characterManagerToolStripMenuItem";
             this.characterManagerToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.characterManagerToolStripMenuItem.Text = "Character Manager";
-            // 
-            // spawnsToolStripMenuItem
-            // 
-            this.spawnsToolStripMenuItem.Name = "spawnsToolStripMenuItem";
-            this.spawnsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.spawnsToolStripMenuItem.Text = "Spawns";
-            // 
-            // itemsAndObjectsToolStripMenuItem
-            // 
-            this.itemsAndObjectsToolStripMenuItem.Name = "itemsAndObjectsToolStripMenuItem";
-            this.itemsAndObjectsToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
-            this.itemsAndObjectsToolStripMenuItem.Text = "Items and Objects";
-            // 
-            // miscellaneousToolStripMenuItem
-            // 
-            this.miscellaneousToolStripMenuItem.Name = "miscellaneousToolStripMenuItem";
-            this.miscellaneousToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.miscellaneousToolStripMenuItem.Text = "Miscellaneous";
             // 
             // helpToolStripMenuItem
             // 
@@ -219,11 +197,25 @@
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(246, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 397);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(864, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(864, 482);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -234,6 +226,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,15 +247,13 @@
         private System.Windows.Forms.ToolStripMenuItem accountsAndCharactersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem characterManagerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem spawnsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem itemsAndObjectsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem miscellaneousToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remoteConnectionConfigurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutSWGANHServerManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutSWGANHToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

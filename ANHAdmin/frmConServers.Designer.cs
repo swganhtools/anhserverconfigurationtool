@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConServers));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtConnection = new System.Windows.Forms.TextBox();
@@ -62,6 +63,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.Controls.Add(this.txtConnection);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -73,7 +75,9 @@
             // 
             // txtConnection
             // 
+            this.txtConnection.BackColor = System.Drawing.Color.Teal;
             this.txtConnection.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConnection.ForeColor = System.Drawing.Color.White;
             this.txtConnection.Location = new System.Drawing.Point(6, 7);
             this.txtConnection.Multiline = true;
             this.txtConnection.Name = "txtConnection";
@@ -83,6 +87,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackgroundImage = global::ANHAdmin.Properties.Resources.newgui;
             this.tabPage2.Controls.Add(this.txtChat);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -94,7 +99,9 @@
             // 
             // txtChat
             // 
+            this.txtChat.BackColor = System.Drawing.Color.Teal;
             this.txtChat.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.txtChat.ForeColor = System.Drawing.Color.White;
             this.txtChat.Location = new System.Drawing.Point(6, 7);
             this.txtChat.Multiline = true;
             this.txtChat.Name = "txtChat";
@@ -104,6 +111,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackgroundImage = global::ANHAdmin.Properties.Resources.newgui;
             this.tabPage3.Controls.Add(this.txtPing);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -114,7 +122,9 @@
             // 
             // txtPing
             // 
+            this.txtPing.BackColor = System.Drawing.Color.Teal;
             this.txtPing.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.txtPing.ForeColor = System.Drawing.Color.White;
             this.txtPing.Location = new System.Drawing.Point(6, 7);
             this.txtPing.Multiline = true;
             this.txtPing.Name = "txtPing";
@@ -124,7 +134,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.BackgroundImage = global::ANHAdmin.Properties.Resources.newgui;
             this.tabPage4.Controls.Add(this.txtLogin);
+            this.tabPage4.ForeColor = System.Drawing.Color.White;
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(630, 432);
@@ -134,7 +146,9 @@
             // 
             // txtLogin
             // 
+            this.txtLogin.BackColor = System.Drawing.Color.Teal;
             this.txtLogin.Font = new System.Drawing.Font("Lucida Console", 8.25F);
+            this.txtLogin.ForeColor = System.Drawing.Color.White;
             this.txtLogin.Location = new System.Drawing.Point(6, 7);
             this.txtLogin.Multiline = true;
             this.txtLogin.Name = "txtLogin";
@@ -186,6 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(770, 464);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
