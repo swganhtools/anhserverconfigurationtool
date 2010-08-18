@@ -36,8 +36,6 @@ C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug
 C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmDBConfig.resources
 C:\Users\Kevin\Documents\Visual Studio 2008\Projects\ANHAdmin\ANHAdmin\obj\Debug\ANHAdmin.frmConfig.resources
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\bin\Debug\ANHAdmin.exe.config
-C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.exe
-C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.pdb
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\bin\Debug\ANHAdmin.exe
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\bin\Debug\ANHAdmin.pdb
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\bin\Debug\ANHMySQL.dll
@@ -54,3 +52,5 @@ C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.frmZones.resour
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.Properties.Resources.resources
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ResGen.read.1.tlog
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ResGen.write.1.tlog
+C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.exe
+C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.pdb

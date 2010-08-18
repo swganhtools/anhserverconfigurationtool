@@ -67,7 +67,91 @@ namespace ANHAdmin
             loginserver.StdOutReceived += new DataReceivedHandler(writeLoginStreamInfo);
             loginserver.Completed += new EventHandler(processCompletedOrCanceled);
             loginserver.Cancelled += new EventHandler(processCompletedOrCanceled);
+            //loginserver.Exited += new EventHandler(LaunchAgain);
             loginserver.Start();
+        }
+        private void checkLog() {
+            Process[] pname = Process.GetProcessesByName("loginserver");
+            if (pname.Length == 0)
+            {
+ 
+               connectionserver.Cancel();
+               chatserver.Cancel();
+               pingserver.Cancel();
+               loginserver.Cancel();
+               conserver();
+               chtserver();
+               pngserver();
+               logserver();
+            }
+            else
+            {
+                //MessageBox.Show("run");
+            }
+        }
+        private void checkCon()
+        {
+            Process[] pname = Process.GetProcessesByName("connectionserver");
+            if (pname.Length == 0)
+            {
+                connectionserver.Cancel();
+                chatserver.Cancel();
+                pingserver.Cancel();
+                loginserver.Cancel();
+                conserver();
+                chtserver();
+                pngserver();
+                logserver();
+            }
+            else
+            {
+                //MessageBox.Show("run");
+            }
+        }
+        private void checkchat()
+        {
+            Process[] pname = Process.GetProcessesByName("chatserver");
+            if (pname.Length == 0)
+            {
+                connectionserver.Cancel();
+                chatserver.Cancel();
+                pingserver.Cancel();
+                loginserver.Cancel();
+                conserver();
+                chtserver();
+                pngserver();
+                logserver();
+            }
+            else
+            {
+                //MessageBox.Show("run");
+            }
+        }
+        private void checkPing()
+        {
+            Process[] pname = Process.GetProcessesByName("pingserver");
+            if (pname.Length == 0)
+            {
+                connectionserver.Cancel();
+                chatserver.Cancel();
+                pingserver.Cancel();
+                loginserver.Cancel();
+                conserver();
+                chtserver();
+                pngserver();
+                logserver();
+            }
+            else
+            {
+                //MessageBox.Show("run");
+            }
+        }
+        private void _processCheck(object sender, EventArgs e)
+        {
+            checkCon();
+            checkLog();
+            checkchat();
+            checkPing();
         }
         private void frmConServers_Load(object sender, EventArgs e)
         {
