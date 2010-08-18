@@ -17,6 +17,10 @@ namespace ANHAdmin
         ProcessCaller chatserver = null;
         ProcessCaller pingserver = null;
         ProcessCaller loginserver = null;
+        private bool flgConnection = false;
+        private bool flgChat = false;
+        private bool flgPing = false;
+        private bool flgLogin = false;
         public frmConServers()
         {
             InitializeComponent();
@@ -32,6 +36,7 @@ namespace ANHAdmin
             connectionserver.Completed += new EventHandler(processCompletedOrCanceled);
             connectionserver.Cancelled += new EventHandler(processCompletedOrCanceled);
             connectionserver.Start();
+            flgConnection = true;
         }
         public void chtserver()
         {
@@ -44,6 +49,7 @@ namespace ANHAdmin
             chatserver.Completed += new EventHandler(processCompletedOrCanceled);
             chatserver.Cancelled += new EventHandler(processCompletedOrCanceled);
             chatserver.Start();
+            flgChat = true;
         }
         public void pngserver()
         {
@@ -56,6 +62,7 @@ namespace ANHAdmin
             pingserver.Completed += new EventHandler(processCompletedOrCanceled);
             pingserver.Cancelled += new EventHandler(processCompletedOrCanceled);
             pingserver.Start();
+            flgPing = true;
         }
         public void logserver()
         {
@@ -69,24 +76,17 @@ namespace ANHAdmin
             loginserver.Cancelled += new EventHandler(processCompletedOrCanceled);
             //loginserver.Exited += new EventHandler(LaunchAgain);
             loginserver.Start();
+            flgLogin = true;
         }
         private void checkLog() {
             Process[] pname = Process.GetProcessesByName("loginserver");
             if (pname.Length == 0)
             {
- 
-               connectionserver.Cancel();
-               chatserver.Cancel();
-               pingserver.Cancel();
-               loginserver.Cancel();
-               conserver();
-               chtserver();
-               pngserver();
-               logserver();
+                flgLogin = false;
             }
             else
             {
-                //MessageBox.Show("run");
+                flgLogin = true;
             }
         }
         private void checkCon()
@@ -94,18 +94,11 @@ namespace ANHAdmin
             Process[] pname = Process.GetProcessesByName("connectionserver");
             if (pname.Length == 0)
             {
-                connectionserver.Cancel();
-                chatserver.Cancel();
-                pingserver.Cancel();
-                loginserver.Cancel();
-                conserver();
-                chtserver();
-                pngserver();
-                logserver();
+                flgConnection = false;
             }
             else
             {
-                //MessageBox.Show("run");
+                flgConnection = true;
             }
         }
         private void checkchat()
@@ -113,18 +106,11 @@ namespace ANHAdmin
             Process[] pname = Process.GetProcessesByName("chatserver");
             if (pname.Length == 0)
             {
-                connectionserver.Cancel();
-                chatserver.Cancel();
-                pingserver.Cancel();
-                loginserver.Cancel();
-                conserver();
-                chtserver();
-                pngserver();
-                logserver();
+                flgChat = false;
             }
             else
             {
-                //MessageBox.Show("run");
+                flgChat = true;
             }
         }
         private void checkPing()
@@ -132,18 +118,11 @@ namespace ANHAdmin
             Process[] pname = Process.GetProcessesByName("pingserver");
             if (pname.Length == 0)
             {
-                connectionserver.Cancel();
-                chatserver.Cancel();
-                pingserver.Cancel();
-                loginserver.Cancel();
-                conserver();
-                chtserver();
-                pngserver();
-                logserver();
+                flgPing = false;
             }
             else
             {
-                //MessageBox.Show("run");
+                flgPing = true;
             }
         }
         private void _processCheck(object sender, EventArgs e)
@@ -152,6 +131,16 @@ namespace ANHAdmin
             checkLog();
             checkchat();
             checkPing();
+            if(flgConnection != true || flgChat != true || flgPing != true || flgLogin != true){
+                connectionserver.Cancel();
+                chatserver.Cancel();
+                pingserver.Cancel();
+                loginserver.Cancel();
+                conserver();
+                chtserver();
+                pngserver();
+                logserver();
+            }
         }
         private void frmConServers_Load(object sender, EventArgs e)
         {
