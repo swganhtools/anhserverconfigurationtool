@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConServers));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -43,7 +42,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnStopLogin = new System.Windows.Forms.Button();
+            this.btnStopPing = new System.Windows.Forms.Button();
+            this.btnStopChat = new System.Windows.Forms.Button();
+            this.btnStopCon = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -164,7 +166,7 @@
             this.StartServers.Name = "StartServers";
             this.StartServers.Size = new System.Drawing.Size(114, 23);
             this.StartServers.TabIndex = 1;
-            this.StartServers.Text = "Connection Server";
+            this.StartServers.Text = "Start Connection";
             this.StartServers.UseVisualStyleBackColor = true;
             this.StartServers.Click += new System.EventHandler(this.StartServers_Click);
             // 
@@ -174,7 +176,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Chat Server";
+            this.button1.Text = "Start Chat";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -184,7 +186,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Ping Server";
+            this.button2.Text = "Start Ping";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -194,22 +196,60 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 23);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Login Server";
+            this.button3.Text = "Start Login";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // timer1
+            // btnStopLogin
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 60000;
-            this.timer1.Tick += new System.EventHandler(this._processCheck);
+            this.btnStopLogin.Location = new System.Drawing.Point(764, 112);
+            this.btnStopLogin.Name = "btnStopLogin";
+            this.btnStopLogin.Size = new System.Drawing.Size(114, 23);
+            this.btnStopLogin.TabIndex = 8;
+            this.btnStopLogin.Text = "Stop Login";
+            this.btnStopLogin.UseVisualStyleBackColor = true;
+            this.btnStopLogin.Click += new System.EventHandler(this.btnStopLogin_Click);
+            // 
+            // btnStopPing
+            // 
+            this.btnStopPing.Location = new System.Drawing.Point(764, 83);
+            this.btnStopPing.Name = "btnStopPing";
+            this.btnStopPing.Size = new System.Drawing.Size(114, 23);
+            this.btnStopPing.TabIndex = 7;
+            this.btnStopPing.Text = "Stop Ping";
+            this.btnStopPing.UseVisualStyleBackColor = true;
+            this.btnStopPing.Click += new System.EventHandler(this.btnStopPing_Click);
+            // 
+            // btnStopChat
+            // 
+            this.btnStopChat.Location = new System.Drawing.Point(764, 54);
+            this.btnStopChat.Name = "btnStopChat";
+            this.btnStopChat.Size = new System.Drawing.Size(114, 23);
+            this.btnStopChat.TabIndex = 6;
+            this.btnStopChat.Text = "Stop Chat";
+            this.btnStopChat.UseVisualStyleBackColor = true;
+            this.btnStopChat.Click += new System.EventHandler(this.btnStopChat_Click);
+            // 
+            // btnStopCon
+            // 
+            this.btnStopCon.Location = new System.Drawing.Point(764, 25);
+            this.btnStopCon.Name = "btnStopCon";
+            this.btnStopCon.Size = new System.Drawing.Size(114, 23);
+            this.btnStopCon.TabIndex = 5;
+            this.btnStopCon.Text = "Stop Connection";
+            this.btnStopCon.UseVisualStyleBackColor = true;
+            this.btnStopCon.Click += new System.EventHandler(this.btnStopCon_Click);
             // 
             // frmConServers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(770, 464);
+            this.ClientSize = new System.Drawing.Size(888, 464);
+            this.Controls.Add(this.btnStopLogin);
+            this.Controls.Add(this.btnStopPing);
+            this.Controls.Add(this.btnStopChat);
+            this.Controls.Add(this.btnStopCon);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -247,6 +287,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnStopLogin;
+        private System.Windows.Forms.Button btnStopPing;
+        private System.Windows.Forms.Button btnStopChat;
+        private System.Windows.Forms.Button btnStopCon;
     }
 }

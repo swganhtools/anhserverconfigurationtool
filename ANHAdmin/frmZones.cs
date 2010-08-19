@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace ANHAdmin
 {
@@ -58,8 +59,8 @@ namespace ANHAdmin
             tutorialzone.Arguments = "tutorial";
             tutorialzone.StdErrReceived += new DataReceivedHandler(writeTutorialStreamInfo);
             tutorialzone.StdOutReceived += new DataReceivedHandler(writeTutorialStreamInfo);
-            tutorialzone.Completed += new EventHandler(processCompletedOrCanceled);
-            tutorialzone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            tutorialzone.Completed += new EventHandler(tutorialCompleted);
+            tutorialzone.Cancelled += new EventHandler(tutorialCanceled);
             tutorialzone.Start();
             flgTutorialStarted = true;
         }
@@ -71,8 +72,8 @@ namespace ANHAdmin
             tatooinezone.Arguments = "tatooine";
             tatooinezone.StdErrReceived += new DataReceivedHandler(writeTatooineStreamInfo);
             tatooinezone.StdOutReceived += new DataReceivedHandler(writeTatooineStreamInfo);
-            tatooinezone.Completed += new EventHandler(processCompletedOrCanceled);
-            tatooinezone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            tatooinezone.Completed += new EventHandler(tatooineCompleted);
+            tatooinezone.Cancelled += new EventHandler(tatooineCanceled);
             tatooinezone.Start();
             flgTatooineStarted = true;
         }
@@ -84,8 +85,8 @@ namespace ANHAdmin
             corelliazone.Arguments = "corellia";
             corelliazone.StdErrReceived += new DataReceivedHandler(writeCorelliaStreamInfo);
             corelliazone.StdOutReceived += new DataReceivedHandler(writeCorelliaStreamInfo);
-            corelliazone.Completed += new EventHandler(processCompletedOrCanceled);
-            corelliazone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            corelliazone.Completed += new EventHandler(corelliaCompleted);
+            corelliazone.Cancelled += new EventHandler(corelliaCanceled);
             corelliazone.Start();
             flgCorelliaStarted = true;
         }
@@ -97,8 +98,8 @@ namespace ANHAdmin
             dantooinezone.Arguments = "dantooine";
             dantooinezone.StdErrReceived += new DataReceivedHandler(writeDantooineStreamInfo);
             dantooinezone.StdOutReceived += new DataReceivedHandler(writeDantooineStreamInfo);
-            dantooinezone.Completed += new EventHandler(processCompletedOrCanceled);
-            dantooinezone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            dantooinezone.Completed += new EventHandler(dantooineCompleted);
+            dantooinezone.Cancelled += new EventHandler(dantooineCanceled);
             dantooinezone.Start();
             flgDantooineStarted = true;
         }
@@ -110,8 +111,8 @@ namespace ANHAdmin
             dathomirzone.Arguments = "dathomir";
             dathomirzone.StdErrReceived += new DataReceivedHandler(writeDathomirStreamInfo);
             dathomirzone.StdOutReceived += new DataReceivedHandler(writeDathomirStreamInfo);
-            dathomirzone.Completed += new EventHandler(processCompletedOrCanceled);
-            dathomirzone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            dathomirzone.Completed += new EventHandler(dathomirCompleted);
+            dathomirzone.Cancelled += new EventHandler(dathomirCanceled);
             dathomirzone.Start();
             flgDathomirStarted = true;
         }
@@ -123,8 +124,8 @@ namespace ANHAdmin
             endorzone.Arguments = "endor";
             endorzone.StdErrReceived += new DataReceivedHandler(writeEndorStreamInfo);
             endorzone.StdOutReceived += new DataReceivedHandler(writeEndorStreamInfo);
-            endorzone.Completed += new EventHandler(processCompletedOrCanceled);
-            endorzone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            endorzone.Completed += new EventHandler(endorCompleted);
+            endorzone.Cancelled += new EventHandler(endorCanceled);
             endorzone.Start();
             flgEndorStarted = true;
         }
@@ -136,8 +137,8 @@ namespace ANHAdmin
             lokzone.Arguments = "lok";
             lokzone.StdErrReceived += new DataReceivedHandler(writeLokStreamInfo);
             lokzone.StdOutReceived += new DataReceivedHandler(writeLokStreamInfo);
-            lokzone.Completed += new EventHandler(processCompletedOrCanceled);
-            lokzone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            lokzone.Completed += new EventHandler(lokCompleted);
+            lokzone.Cancelled += new EventHandler(lokCanceled);
             lokzone.Start();
             flgLokStarted = true;
         }
@@ -149,8 +150,8 @@ namespace ANHAdmin
             naboozone.Arguments = "naboo";
             naboozone.StdErrReceived += new DataReceivedHandler(writeNabooStreamInfo);
             naboozone.StdOutReceived += new DataReceivedHandler(writeNabooStreamInfo);
-            naboozone.Completed += new EventHandler(processCompletedOrCanceled);
-            naboozone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            naboozone.Completed += new EventHandler(nabooCompleted);
+            naboozone.Cancelled += new EventHandler(nabooCanceled);
             naboozone.Start();
             flgNabooStarted = true;
         }
@@ -162,8 +163,8 @@ namespace ANHAdmin
             rorizone.Arguments = "rori";
             rorizone.StdErrReceived += new DataReceivedHandler(writeRoriStreamInfo);
             rorizone.StdOutReceived += new DataReceivedHandler(writeRoriStreamInfo);
-            rorizone.Completed += new EventHandler(processCompletedOrCanceled);
-            rorizone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            rorizone.Completed += new EventHandler(roriCompleted);
+            rorizone.Cancelled += new EventHandler(roriCanceled);
             rorizone.Start();
             flgRoriStarted = true;
         }
@@ -175,8 +176,8 @@ namespace ANHAdmin
             taluszone.Arguments = "talus";
             taluszone.StdErrReceived += new DataReceivedHandler(writeTalusStreamInfo);
             taluszone.StdOutReceived += new DataReceivedHandler(writeTalusStreamInfo);
-            taluszone.Completed += new EventHandler(processCompletedOrCanceled);
-            taluszone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            taluszone.Completed += new EventHandler(talusCompleted);
+            taluszone.Cancelled += new EventHandler(talusCanceled);
             taluszone.Start();
             flgTalusStarted = true;
         }
@@ -188,282 +189,166 @@ namespace ANHAdmin
             yavinzone.Arguments = "yavin4";
             yavinzone.StdErrReceived += new DataReceivedHandler(writeYavinStreamInfo);
             yavinzone.StdOutReceived += new DataReceivedHandler(writeYavinStreamInfo);
-            yavinzone.Completed += new EventHandler(processCompletedOrCanceled);
-            yavinzone.Cancelled += new EventHandler(processCompletedOrCanceled);
+            yavinzone.Completed += new EventHandler(yavinCompleted);
+            yavinzone.Cancelled += new EventHandler(yavinCanceled);
             yavinzone.Start();
             flgYavinStarted = true;
-        }
-        private void checktutorial()
-        {
-            if (flgTutorialStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5010;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgTutorial = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgTutorial = false;
-                }
-            }
-        }
-        private void checkcorellia()
-        {
-            if (flgCorelliaStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5001;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgCorellia = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgCorellia = false;
-                }
-            }
-        }
-        private void checkdantooine()
-        {
-            if (flgDantooineStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5002;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgDantooine = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgDantooine = false;
-                }
-            }
-        }
-        private void checkdathomir()
-        {
-            if (flgDathomirStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5003;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgDathomir = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgDathomir = false;
-                }
-            }
-        }
-        private void checkendor()
-        {
-            if (flgEndorStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5004;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgEndor = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgEndor = false;
-                }
-            }
-        }
-        private void checklok()
-        {
-            if (flgLokStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5005;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgLok = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgLok = false;
-                }
-            }
-        }
-        private void checknaboo()
-        {
-            if (flgNabooStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5006;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgNaboo = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgNaboo = false;
-                }
-            }
-        }
-        private void checkrori()
-        {
-            if (flgRoriStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5007;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgRori = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgRori = false;
-                }
-            }
-        }
-        private void checktalus()
-        {
-            if (flgTalusStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5008;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgTalus = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgTalus = false;
-                }
-            }
-        }
-        private void checktatooine()
-        {
-            if (flgTatooineStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5009;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgTatooine = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgTatooine = false;
-                }
-            }
-        }
-        private void checkyavin()
-        {
-            if (flgYavinStarted == true)
-            {
-                string host = "localhost";
-                Int32 port = 5011;
-                System.Net.Sockets.UdpClient client = new UdpClient();
-                try
-                {
-                    client.Connect(host, port);
-                    flgYavin = true;
-                }
-                catch (SocketException ex)
-                {
-                    flgYavin = false;
-                }
-            }
-        }
-        private void _processCheck(object sender, EventArgs e)
-        {
-            checktutorial();
-            checkcorellia();
-            checkdantooine();
-            checkdathomir();
-            checkendor();
-            checklok();
-            checknaboo();
-            checkrori();
-            checktalus();
-            checktatooine();
-            checkyavin();
-            if (flgTutorialStarted = true && flgTutorial != true)
-            {
-                tutorialzone.Cancel();
-                zonetutorial();
-            }
-            if (flgCorelliaStarted = true && flgCorellia != true)
-            {
-                corelliazone.Cancel();
-                zonecorellia();
-            }
-            if (flgDantooineStarted = true && flgDantooine != true)
-            {
-                dantooinezone.Cancel();
-                zonedantooine();
-            }
-            if (flgDathomirStarted = true && flgDathomir != true)
-            {
-                dathomirzone.Cancel();
-                zonedathomir();
-            }
-            if (flgEndorStarted = true && flgEndor != true)
-            {
-                endorzone.Cancel();
-                zoneendor();
-            }
-            if (flgLokStarted = true && flgLok != true)
-            {
-                lokzone.Cancel();
-                zonelok();
-            }
-            if (flgNabooStarted = true && flgNaboo != true)
-            {
-                naboozone.Cancel();
-                zonenaboo();
-            }
-            if (flgRoriStarted = true && flgRori != true)
-            {
-                rorizone.Cancel();
-                zonerori();
-            }
-            if (flgTalusStarted = true && flgTalus != true)
-            {
-                taluszone.Cancel();
-                zonetalus();
-            }
-            if (flgTatooineStarted = true && flgTatooine != true)
-            {
-                tatooinezone.Cancel();
-                zonetatooine();
-            }
-            if (flgYavinStarted = true && flgYavin != true)
-            {
-                yavinzone.Cancel();
-                zoneyavin();
-            }
         }
         private void processCompletedOrCanceled(object sender, EventArgs e)
         {
             //txtConnection.AppendText("ConnectionServer Exited.");
         }
+        //
+        // Process Crashes or server stops
+        //
+
+        //
+        //Tutorial
+        //
+        private void tutorialCompleted(object sender, EventArgs e)
+        {
+            txtTutorial.AppendText("Tutorial Crash.\n");
+            Thread.Sleep(5000);
+            zonetutorial();
+        }
+        private void tutorialCanceled(object sender, EventArgs e)
+        {
+            txtTutorial.AppendText("Tutorial Stopped by user.\n");
+        }
+        //
+        //Corellia
+        //
+        private void corelliaCompleted(object sender, EventArgs e)
+        {
+            txtCorellia.AppendText("Corellia Crash.\n");
+            Thread.Sleep(5000);
+            zonecorellia();
+        }
+        private void corelliaCanceled(object sender, EventArgs e)
+        {
+            txtCorellia.AppendText("Corellia Stopped by user.\n");
+        }
+        //
+        //Dantooine
+        //
+        private void dantooineCompleted(object sender, EventArgs e)
+        {
+            txtDantooine.AppendText("Dantooine Crash.\n");
+            Thread.Sleep(5000);
+            zonedantooine();
+        }
+        private void dantooineCanceled(object sender, EventArgs e)
+        {
+            txtDantooine.AppendText("Dantooine Stopped by user.");
+        }
+        //
+        //Dathomir
+        //
+        private void dathomirCompleted(object sender, EventArgs e)
+        {
+            txtDathomir.AppendText("Dantooine Crash.\n");
+            Thread.Sleep(5000);
+            zonedathomir();
+        }
+        private void dathomirCanceled(object sender, EventArgs e)
+        {
+            txtDantooine.AppendText("Dathomir Stopped by user.\n");
+        }
+        //
+        //Endor
+        //
+        private void endorCompleted(object sender, EventArgs e)
+        {
+            txtEndor.AppendText("Endor Crash.\n");
+            Thread.Sleep(5000);
+            zoneendor();
+        }
+        private void endorCanceled(object sender, EventArgs e)
+        {
+            txtEndor.AppendText("Endor Stopped by user.\n");
+        }
+        //
+        //Lok
+        //
+        private void lokCompleted(object sender, EventArgs e)
+        {
+            txtLok.AppendText("Lok Crash.\n");
+            Thread.Sleep(5000);
+            zonelok();
+        }
+        private void lokCanceled(object sender, EventArgs e)
+        {
+            txtLok.AppendText("Lok Stopped by user.\n");
+        }
+        //
+        //Naboo
+        //
+        private void nabooCompleted(object sender, EventArgs e)
+        {
+            txtNaboo.AppendText("Naboo Crash.\n");
+            Thread.Sleep(5000);
+            zonenaboo();
+        }
+        private void nabooCanceled(object sender, EventArgs e)
+        {
+            txtNaboo.AppendText("Naboo Stopped by user.\n");
+        }
+        //
+        //Rori
+        //
+        private void roriCompleted(object sender, EventArgs e)
+        {
+            txtRori.AppendText("Rori Crash.\n");
+            Thread.Sleep(5000);
+            zonerori();
+        }
+        private void roriCanceled(object sender, EventArgs e)
+        {
+            txtRori.AppendText("Rori Stopped by user.\n");
+        }
+        //
+        //Talus
+        //
+        private void talusCompleted(object sender, EventArgs e)
+        {
+            txtTalus.AppendText("Talus Crash.\n");
+            Thread.Sleep(5000);
+            zonetalus();
+        }
+        private void talusCanceled(object sender, EventArgs e)
+        {
+            txtTalus.AppendText("Talus Stopped by user.\n");
+        }
+        //
+        //Tatooine
+        //
+        private void tatooineCompleted(object sender, EventArgs e)
+        {
+            txtTatooine.AppendText("Tatooine Crash.\n");
+            Thread.Sleep(5000);
+            zonetatooine();
+        }
+        private void tatooineCanceled(object sender, EventArgs e)
+        {
+            txtTatooine.AppendText("TAtooine Stopped by user.\n");
+        }
+        //
+        //Yavin 4
+        //
+        private void yavinCompleted(object sender, EventArgs e)
+        {
+            txtEndor.AppendText("Yavin 4 Crash.\n");
+            Thread.Sleep(5000);
+            zoneyavin();
+        }
+        private void yavinCanceled(object sender, EventArgs e)
+        {
+            txtYavin.AppendText("Yavin 4 Stopped by user.\n");
+        }
+
+        //
+        //Process The zoneserver output
+        //
         private void writeTutorialStreamInfo(object sender, DataReceivedEventArgs e)
         {
             txtTutorial.AppendText(e.Text + Environment.NewLine);
@@ -604,6 +489,66 @@ namespace ANHAdmin
         private void btnYavin_Click(object sender, EventArgs e)
         {
             zoneyavin();
+        }
+
+        private void btnStopTutorial_Click(object sender, EventArgs e)
+        {
+            tutorialzone.Cancel();
+        }
+
+        private void btnCorellia_Click(object sender, EventArgs e)
+        {
+            zonecorellia();
+        }
+
+        private void btnStopDantooine_Click(object sender, EventArgs e)
+        {
+            dantooinezone.Cancel();
+        }
+
+        private void btnStopCorellia_Click(object sender, EventArgs e)
+        {
+            corelliazone.Cancel();
+        }
+
+        private void btnStopDathomir_Click(object sender, EventArgs e)
+        {
+            dathomirzone.Cancel();
+        }
+
+        private void btnStopEndor_Click(object sender, EventArgs e)
+        {
+            endorzone.Cancel();
+        }
+
+        private void btnStopLok_Click(object sender, EventArgs e)
+        {
+            lokzone.Cancel();
+        }
+
+        private void btnStopNaboo_Click(object sender, EventArgs e)
+        {
+            naboozone.Cancel();
+        }
+
+        private void btnStopRori_Click(object sender, EventArgs e)
+        {
+            rorizone.Cancel();
+        }
+
+        private void btnStopTalus_Click(object sender, EventArgs e)
+        {
+            taluszone.Cancel();
+        }
+
+        private void btnStopTatooine_Click(object sender, EventArgs e)
+        {
+            tatooinezone.Cancel();
+        }
+
+        private void btnStopYavin_Click(object sender, EventArgs e)
+        {
+            yavinzone.Cancel();
         }
     }
 }

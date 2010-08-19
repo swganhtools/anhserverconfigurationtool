@@ -33,8 +33,8 @@ namespace ANHAdmin
             connectionserver.Arguments = "";
             connectionserver.StdErrReceived += new DataReceivedHandler(writeConnStreamInfo);
             connectionserver.StdOutReceived += new DataReceivedHandler(writeConnStreamInfo);
-            connectionserver.Completed += new EventHandler(processCompletedOrCanceled);
-            connectionserver.Cancelled += new EventHandler(processCompletedOrCanceled);
+            connectionserver.Completed += new EventHandler(connectionCompleted);
+            connectionserver.Cancelled += new EventHandler(connectionCanceled);
             connectionserver.Start();
             flgConnection = true;
         }
@@ -46,8 +46,8 @@ namespace ANHAdmin
             chatserver.Arguments = "";
             chatserver.StdErrReceived += new DataReceivedHandler(writeChatStreamInfo);
             chatserver.StdOutReceived += new DataReceivedHandler(writeChatStreamInfo);
-            chatserver.Completed += new EventHandler(processCompletedOrCanceled);
-            chatserver.Cancelled += new EventHandler(processCompletedOrCanceled);
+            chatserver.Completed += new EventHandler(chatCompleted);
+            chatserver.Cancelled += new EventHandler(chatCanceled);
             chatserver.Start();
             flgChat = true;
         }
@@ -59,8 +59,8 @@ namespace ANHAdmin
             pingserver.Arguments = "";
             pingserver.StdErrReceived += new DataReceivedHandler(writePingStreamInfo);
             pingserver.StdOutReceived += new DataReceivedHandler(writePingStreamInfo);
-            pingserver.Completed += new EventHandler(processCompletedOrCanceled);
-            pingserver.Cancelled += new EventHandler(processCompletedOrCanceled);
+            pingserver.Completed += new EventHandler(pingCompleted);
+            pingserver.Cancelled += new EventHandler(pingCanceled);
             pingserver.Start();
             flgPing = true;
         }
@@ -72,76 +72,13 @@ namespace ANHAdmin
             loginserver.Arguments = "";
             loginserver.StdErrReceived += new DataReceivedHandler(writeLoginStreamInfo);
             loginserver.StdOutReceived += new DataReceivedHandler(writeLoginStreamInfo);
-            loginserver.Completed += new EventHandler(processCompletedOrCanceled);
-            loginserver.Cancelled += new EventHandler(processCompletedOrCanceled);
+            loginserver.Completed += new EventHandler(loginCompleted);
+            loginserver.Cancelled += new EventHandler(loginCanceled);
             //loginserver.Exited += new EventHandler(LaunchAgain);
             loginserver.Start();
             flgLogin = true;
         }
-        private void checkLog() {
-            Process[] pname = Process.GetProcessesByName("loginserver");
-            if (pname.Length == 0)
-            {
-                flgLogin = false;
-            }
-            else
-            {
-                flgLogin = true;
-            }
-        }
-        private void checkCon()
-        {
-            Process[] pname = Process.GetProcessesByName("connectionserver");
-            if (pname.Length == 0)
-            {
-                flgConnection = false;
-            }
-            else
-            {
-                flgConnection = true;
-            }
-        }
-        private void checkchat()
-        {
-            Process[] pname = Process.GetProcessesByName("chatserver");
-            if (pname.Length == 0)
-            {
-                flgChat = false;
-            }
-            else
-            {
-                flgChat = true;
-            }
-        }
-        private void checkPing()
-        {
-            Process[] pname = Process.GetProcessesByName("pingserver");
-            if (pname.Length == 0)
-            {
-                flgPing = false;
-            }
-            else
-            {
-                flgPing = true;
-            }
-        }
-        private void _processCheck(object sender, EventArgs e)
-        {
-            checkCon();
-            checkLog();
-            checkchat();
-            checkPing();
-            if(flgConnection != true || flgChat != true || flgPing != true || flgLogin != true){
-                connectionserver.Cancel();
-                chatserver.Cancel();
-                pingserver.Cancel();
-                loginserver.Cancel();
-                conserver();
-                chtserver();
-                pngserver();
-                logserver();
-            }
-        }
+        
         private void frmConServers_Load(object sender, EventArgs e)
         {
             //conserver();
@@ -151,21 +88,85 @@ namespace ANHAdmin
         {
             conserver();
         }
-        private void writeStreamInfo(object sender, DataReceivedEventArgs e)
+        //
+        //Process server crashes and exits
+        //
+
+        //
+        //Connection Server
+        //
+        private void connectionCanceled(object sender, EventArgs e)
         {
-            if (connectionserver != null)
-            {
-                txtConnection.AppendText(e.Text + Environment.NewLine);
-            }
-            if (chatserver != null)
-            {
-                txtChat.AppendText(e.Text + Environment.NewLine);
-            }
-            //txtConnection.AppendText(e.Text + Environment.NewLine);
+            txtConnection.AppendText("ConnectionServer Exited.\n");
         }
-        private void processCompletedOrCanceled(object sender, EventArgs e)
+        private void connectionCompleted(object sender, EventArgs e)
         {
-            txtConnection.AppendText("ConnectionServer Exited.");
+            txtConnection.AppendText("ConnectionServer crashed.\n");
+            connectionserver.Cancel();
+            chatserver.Cancel();
+            pingserver.Cancel();
+            loginserver.Cancel();
+            conserver();
+            chtserver();
+            pngserver();
+            logserver();
+        }
+        //
+        //Chat Server
+        //
+        private void chatCanceled(object sender, EventArgs e)
+        {
+            txtChat.AppendText("Chat Server Exited.\n");
+        }
+        private void chatCompleted(object sender, EventArgs e)
+        {
+            txtChat.AppendText("Chat Server crashed.\n");
+            connectionserver.Cancel();
+            chatserver.Cancel();
+            pingserver.Cancel();
+            loginserver.Cancel();
+            conserver();
+            chtserver();
+            pngserver();
+            logserver();
+        }
+        //
+        //Ping Server
+        //
+        private void pingCanceled(object sender, EventArgs e)
+        {
+            txtPing.AppendText("Ping Server Exited.\n");
+        }
+        private void pingCompleted(object sender, EventArgs e)
+        {
+            txtPing.AppendText("Ping Server crashed.\n");
+            connectionserver.Cancel();
+            chatserver.Cancel();
+            pingserver.Cancel();
+            loginserver.Cancel();
+            conserver();
+            chtserver();
+            pngserver();
+            logserver();
+        }
+        //
+        //Login Server
+        //
+        private void loginCanceled(object sender, EventArgs e)
+        {
+            txtLogin.AppendText("Login Server Exited.\n");
+        }
+        private void loginCompleted(object sender, EventArgs e)
+        {
+            txtLogin.AppendText("Login Server crashed.\n");
+                connectionserver.Cancel();
+                chatserver.Cancel();
+                pingserver.Cancel();
+                loginserver.Cancel();
+                conserver();
+                chtserver();
+                pngserver();
+                logserver();
         }
         private void writeConnStreamInfo(object sender, DataReceivedEventArgs e)
         {
@@ -217,6 +218,26 @@ namespace ANHAdmin
         private void button3_Click(object sender, EventArgs e)
         {
             logserver();
+        }
+
+        private void btnStopCon_Click(object sender, EventArgs e)
+        {
+            connectionserver.Cancel();
+        }
+
+        private void btnStopChat_Click(object sender, EventArgs e)
+        {
+            chatserver.Cancel();
+        }
+
+        private void btnStopPing_Click(object sender, EventArgs e)
+        {
+            pingserver.Cancel();
+        }
+
+        private void btnStopLogin_Click(object sender, EventArgs e)
+        {
+            loginserver.Cancel();
         }
     }
 }
