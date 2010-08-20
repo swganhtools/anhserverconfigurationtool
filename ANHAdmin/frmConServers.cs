@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 
 namespace ANHAdmin
@@ -27,6 +28,7 @@ namespace ANHAdmin
         }
         public void conserver()
         {
+            
             connectionserver = new ProcessCaller(this);
             connectionserver.FileName = "connectionserver.exe";
             connectionserver.WorkingDirectory = "";
@@ -38,6 +40,7 @@ namespace ANHAdmin
             connectionserver.Start();
             flgConnection = true;
         }
+       
         public void chtserver()
         {
             chatserver = new ProcessCaller(this);
@@ -74,7 +77,6 @@ namespace ANHAdmin
             loginserver.StdOutReceived += new DataReceivedHandler(writeLoginStreamInfo);
             loginserver.Completed += new EventHandler(loginCompleted);
             loginserver.Cancelled += new EventHandler(loginCanceled);
-            //loginserver.Exited += new EventHandler(LaunchAgain);
             loginserver.Start();
             flgLogin = true;
         }

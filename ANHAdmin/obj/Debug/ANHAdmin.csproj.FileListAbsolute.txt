@@ -54,3 +54,5 @@ C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ResGen.read.1.tlog
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ResGen.write.1.tlog
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.exe
 C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\ANHAdmin.pdb
+C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\GenerateResource.read.1.tlog
+C:\AnhDev\anhserverconfigurationtool\ANHAdmin\obj\Debug\GenerateResource.write.1.tlog
